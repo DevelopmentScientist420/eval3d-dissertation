@@ -1,0 +1,87 @@
+import threestudio
+import torch
+import torch.nn.functional as F
+from threestudio.models.guidance.stable_zero123_guidance import StableZero123Guidance
+from threestudio.utils.typing import *
+from tqdm import tqdm
+
+
+@threestudio.register("mvimg-gen-stable-zero123-guidance")
+class StableZero123GuidanceInference(StableZero123Guidance):
+    @torch.cuda.amp.autocast(enabled=False)
+    @torch.no_grad()
+    def guidance_eval(self, cond, latents_noisy, noise_pred):
+        self.scheduler.set_timesteps(self.num_inference_steps)
+        self.scheduler.timesteps_gpu = self.scheduler.timesteps.to(self.device)
+        bs = latents_noisy.shape[0]
+        idxs = torch.zeros(bs, dtype=torch.long, device=self.device)
+
+        # fracs = list((t / self.scheduler.config.num_train_timesteps).cpu().numpy())
+        # imgs_noisy = self.decode_latents(latents_noisy[:bs]).permute(0, 2, 3, 1)
+
+        latents_final = []
+        for b, i in enumerate(idxs):
+            latents = latents_noisy[b : b + 1]
+            for t in tqdm(self.scheduler.timesteps[i:], leave=False):
+                # pred noise
+                x_in = torch.cat([latents] * 2)
+                t_in = torch.cat([t.reshape(1)] * 2).to(self.device)
+                noise_pred = self.model.apply_model(x_in, t_in, cond)
+                # perform guidance
+                noise_pred_uncond, noise_pred_cond = noise_pred.chunk(2)
+                noise_pred = noise_pred_uncond + self.cfg.guidance_scale * (
+                    noise_pred_cond - noise_pred_uncond
+                )
+                # get prev latent
+                latents = self.scheduler.step(noise_pred, t, latents)["prev_sample"]
+            latents_final.append(latents)
+
+        latents_final = torch.cat(latents_final)
+        imgs_final = self.decode_latents(latents_final).permute(0, 2, 3, 1)
+
+        return {
+            "bs": bs,
+            "imgs_final": imgs_final,
+        }
+
+    def __call__(
+        self,
+        elevation: Float[Tensor, "B"],
+        azimuth: Float[Tensor, "B"],
+        camera_distances: Float[Tensor, "B"],
+        **kwargs,
+    ):
+        batch_size = elevation.shape[0]
+        assert batch_size == 1
+        latents: Float[Tensor, "B 4 32 32"]
+        latents = torch.zeros((batch_size, 4, 32, 32), device=self.device)
+
+        # camera_distances = torch.zeros_like(camera_distances)
+        # elevation = torch.zeros_like(elevation)
+        # azimuth = torch.zeros_like(azimuth)
+        cond = self.get_cond(elevation, azimuth, camera_distances)
+
+        torch.manual_seed(10)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed(10)
+            torch.backends.cudnn.deterministic = True
+            torch.backends.cudnn.benchmark = False  # Disable CuDNN benchmarking for reproducibility
+        
+        # timestep ~ U(0.02, 0.98) to avoid very high/low noise level
+        t = torch.randint(
+            self.scheduler.num_train_timesteps - 1,
+            self.scheduler.num_train_timesteps,
+            [batch_size],
+            dtype=torch.long,
+            device=self.device,
+        )
+
+        # predict the noise residual with unet, NO grad!
+        with torch.no_grad():
+            # add noise
+            noise = torch.randn_like(latents)  # TODO: use torch generator
+            latents_noisy = self.scheduler.add_noise(latents, noise, t)
+
+        guidance_out = self.guidance_eval(cond, latents_noisy, noise)
+
+        return guidance_out

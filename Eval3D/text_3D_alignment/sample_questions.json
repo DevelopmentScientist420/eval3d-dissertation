@@ -1,0 +1,19 @@
+{
+    "prompt": "a corgi taking a selfie",
+    "questions": {
+        "1": "Is there a corgi?",
+        "2": "Is the corgi taking a selfie?"
+    },
+    "scene_graph": {
+        "1": "entity - whole (corgi)",
+        "2": "action - (corgi, take a selfie)"
+    },
+    "question_dependencies": {
+        "1": [
+            0
+        ],
+        "2": [
+            1
+        ]
+    }
+}

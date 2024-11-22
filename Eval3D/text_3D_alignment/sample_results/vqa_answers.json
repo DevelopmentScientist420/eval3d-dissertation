@@ -1,0 +1,53 @@
+{
+  "questions": {
+    "1": "Is there a corgi?",
+    "2": "Is the corgi taking a selfie?"
+  },
+  "answers": {
+    "1": {
+      "0.png": "Yes",
+      "11.png": "Yes",
+      "8.png": "Yes",
+      "9.png": "Yes",
+      "3.png": "Yes",
+      "6.png": "No",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "10.png": "Yes",
+      "7.png": "Yes",
+      "2.png": "Yes",
+      "5.png": "No"
+    },
+    "2": {
+      "0.png": "No",
+      "11.png": "No",
+      "8.png": "No",
+      "9.png": "No",
+      "3.png": "No",
+      "6.png": "No",
+      "1.png": "No",
+      "4.png": "No",
+      "10.png": "No",
+      "7.png": "No",
+      "2.png": "No",
+      "5.png": "No"
+    }
+  },
+  "scene_graph": {
+    "1": "entity - whole (corgi)",
+    "2": "action - (corgi, take a selfie)"
+  },
+  "dependencies": {
+    "1": [
+      0
+    ],
+    "2": [
+      1
+    ]
+  },
+  "alignment_scores_per_question": {
+    "1": 1,
+    "2": 0
+  },
+  "alignment_score": 0.5
+}
