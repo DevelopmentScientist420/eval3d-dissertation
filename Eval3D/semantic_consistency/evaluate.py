@@ -99,7 +99,7 @@ def extract_mesh(prompt, algorithm_name, prompt_data_path, tmux_id):
     elif "mvdream" in algorithm_name:
         command = '''cd {}; python launch.py --config configs/{}.yaml --export --gpu 0 system.prompt_processor.prompt="{}" resume="{}/ckpts/last.ckpt" system.exporter_type=mesh-exporter system.geometry.isosurface_method=mc-cpu system.geometry.isosurface_resolution=256 system.geometry.isosurface_threshold=1. system.exporter.context_type=cuda'''.format(threestudio_relative_path, algorithm_name, prompt, prompt_data_path, prompt_data_path)
 
-    elif "prolific-dreamer" in algorithm_name or "magic3d" in algorithm_name:
+    elif "prolificdreamer" in algorithm_name or "magic3d" in algorithm_name:
         command = '''cd {}; python launch.py --config configs/{}.yaml --export --gpu 0 system.prompt_processor.prompt="{}" resume="{}/ckpts/last.ckpt" system.geometry_convert_from="{}/ckpts/last.ckpt" system.exporter_type=mesh-exporter system.renderer.context_type=cuda system.exporter.context_type=cuda'''.format(threestudio_relative_path, algorithm_name, prompt, prompt_data_path, prompt_data_path)
     
     ### gs

@@ -46,6 +46,14 @@ pip install -r requirements.txt
 mamba install pytorch3d==0.7.5 -c pytorch3d
 ```
 
+Installing tiny-cuda-nn can be challenging. If you face missing `libcuda.so` error (`-lcuda`), then first finding the path to `libcuda.so` and linking that via `LIBRARY_PATH`` could be useful.
+
+**Example:**
+```bash
+find /usr -name 'libcuda.so*' 2>/dev/null   
+LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH" pip install git+https://github.com/NVlabs/tiny-cuda-nn.git#subdirectory=bindings/torch
+```
+
 **For semantic consistency metric**: 
 ```bash
 cd Eval3D/semantic_consistency  
@@ -90,6 +98,8 @@ All the generated data is available at: "Generate3D/threestudio/outputs". Set th
 ```bash
 export DATA_PATH="$(pwd)/Generate3D/threestudio/outputs"
 ```
+
+We provide some exemplar 3D mesh and corresponding metadata (rendered images, normals and opacity maps) here – [**Exemplar 3D Data**](https://www.dropbox.com/home/Shivam%20Duggal/eval3d-cvpr-2025). Download these and move them under $DATA_PATH and then run the following Eval3D metric commands.
 
 <a name="GeometricConsistencyMetric"></a>
 ## Geometric Consistency Metric
