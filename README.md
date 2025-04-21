@@ -36,14 +36,14 @@ We utilize a diverse array of *foundation models* and tools to measure the *cons
 ## Setup
 
 ```bash
-mamba create -n eval3d python=3.8  
-mamba activate eval3d  
-mamba install -c conda-forge ninja cxx-compiler==1.3.0  
-mamba install cuda -c nvidia/label/cuda-11.8.0  
-mamba install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=11.8 -c pytorch -c nvidia  
+conda create -n eval3d python=3.8  
+conda activate eval3d  
+conda install -c conda-forge ninja cxx-compiler==1.3.0  
+conda install cuda -c nvidia/label/cuda-11.8.0  
+conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=11.8 -c pytorch -c nvidia  
 pip install git+https://github.com/NVlabs/tiny-cuda-nn.git#subdirectory=bindings/torch  
 pip install -r requirements.txt  
-mamba install pytorch3d==0.7.5 -c pytorch3d
+conda install pytorch3d==0.7.5 -c pytorch3d
 ```
 
 Installing tiny-cuda-nn can be challenging. If you face missing `libcuda.so` error (`-lcuda`), then first finding the path to `libcuda.so` and linking that via `LIBRARY_PATH`` could be useful.
@@ -65,6 +65,20 @@ pip install -e .
 **For structural consistency metric**:  
 
 Download pretrained Stable Zero123 checkpoint ```stable-zero123.ckpt``` into ```Generate3D/threestudio/load/zero123``` from https://huggingface.co/stabilityai/stable-zero123
+
+**For text-3D alignment**:
+
+To use OpenAI API models for VQA, you need to set up the OpenAI API key.
+```bash
+pip install openai
+
+export OPENAI_API_KEY=[YOUR OPENAI KEY]
+```
+
+**For Aesthetics**:
+```bash
+pip install image-reward
+```
 
 <a name="Data"></a>
 ## Data
@@ -173,12 +187,25 @@ Generated data / outputs are inside the corresponding prompt folders in $DATA_PA
 <a name="AestheticsMetric"></a>
 ## Aesthetics Metric
 
-Please refer to [aesthetics/README.md](Eval3D/aesthetics/README.md)
+The input is a video file for the 3D asset. A sample file is in `Eval3D/aesthetics_metric/a_corgi_taking_a_selfie.mp4`
+
+To compute the aesthetics score given by image-reward:
+
+```bash
+cd Eval3D/aesthetics_metric
+python evaluate.py --video a_corgi_taking_a_selfie.mp4
+```
+
+You can also refer to the notebook `Eval3D/aesthetics_metric/example.ipynb`
 
 <a name="Text3DAlignmentMetric"></a>
 ## Text-3D Alignment Metric
 
-Please refer to [text_3D_alignment/README.md](Eval3D/text_3D_alignment/README.md)
+The input is a video file for the 3D asset (e.g., `Eval3D/text_3D_alignment/a_corgi_taking_a_selfie.mp4`) and the corresponding evaluation questions (e.g., `Eval3D/text_3D_alignment/sample_questions.json`).
+
+We pre-generated the questions for prompts in our benchmark in `data/3dprompts_with_questions.json`.
+
+You can customize the multimodal LM for evaluation. Please refer to [text_3D_alignment/README.md](Eval3D/text_3D_alignment/README.md)
 
 **DISCLAIMER:** Eval3D is an early effort towards developing interpretable, human-aligned 3D asset evaluation. We acknowledge that the proposed metrics are not flawless (as is the case with most metrics) and may have some limitations. The goal of this repository is to inspire further research and advancements in this area.
 
