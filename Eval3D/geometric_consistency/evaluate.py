@@ -96,7 +96,7 @@ def depth_map_to_normal_map(depth_map):
 
 
 
-def compute_metric(data_path, normal_metric_threshold=0.4, opacity_threshold=0.01):
+def compute_metric(data_path, normal_metric_threshold=0.3, opacity_threshold=0.01):
     os.system('''mkdir -p ''' + os.path.join(data_path.replace("'", "\\'"), "normal_metric"))
     os.system('''mkdir -p ''' + os.path.join(data_path.replace("'", "\\'"), "normal_camera"))
     os.system('''mkdir -p ''' + os.path.join(data_path.replace("'", "\\'"), "depth_anything_normal_camera"))
