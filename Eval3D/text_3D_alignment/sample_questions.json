@@ -1,19 +1,25 @@
 {
-    "prompt": "a corgi taking a selfie",
+    "prompt": "an ancient aging tiled stone floor with grass growing between the tiles",
     "questions": {
-        "1": "Is there a corgi?",
-        "2": "Is the corgi taking a selfie?"
+        "1": "Is there a tiled stone floor?",
+        "2": "Is there grass growing between the tiles?",
+        "3": "Is the floor ancient and aging?"
     },
     "scene_graph": {
-        "1": "entity - whole (corgi)",
-        "2": "action - (corgi, take a selfie)"
+        "1": "entity - tiled stone floor",
+        "2": "entity - grass",
+        "3": "action - (tile, aging, floor)"
     },
     "question_dependencies": {
         "1": [
             0
         ],
         "2": [
-            1
+            0
+        ],
+        "3": [
+            1,
+            2
         ]
     }
 }

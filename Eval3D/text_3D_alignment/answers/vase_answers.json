@@ -1,0 +1,93 @@
+{
+  "questions": {
+    "1": "Is there an ancient vase?",
+    "2": "Is there carving patterns on the vase?",
+    "3": "Is the vase aged?",
+    "4": "Is the vase with carving patterns and aged texture?"
+  },
+  "answers": {
+    "1": {
+      "10.png": "N/A",
+      "5.png": "N/A",
+      "7.png": "N/A",
+      "9.png": "N/A",
+      "0.png": "N/A",
+      "2.png": "N/A",
+      "6.png": "N/A",
+      "3.png": "N/A",
+      "8.png": "N/A",
+      "1.png": "N/A",
+      "4.png": "N/A",
+      "11.png": "N/A"
+    },
+    "2": {
+      "10.png": "N/A",
+      "5.png": "N/A",
+      "7.png": "N/A",
+      "9.png": "N/A",
+      "0.png": "N/A",
+      "2.png": "N/A",
+      "6.png": "N/A",
+      "3.png": "N/A",
+      "8.png": "N/A",
+      "1.png": "N/A",
+      "4.png": "N/A",
+      "11.png": "N/A"
+    },
+    "3": {
+      "10.png": "N/A",
+      "5.png": "N/A",
+      "7.png": "N/A",
+      "9.png": "N/A",
+      "0.png": "N/A",
+      "2.png": "N/A",
+      "6.png": "N/A",
+      "3.png": "N/A",
+      "8.png": "N/A",
+      "1.png": "N/A",
+      "4.png": "N/A",
+      "11.png": "N/A"
+    },
+    "4": {
+      "10.png": "N/A",
+      "5.png": "N/A",
+      "7.png": "N/A",
+      "9.png": "N/A",
+      "0.png": "N/A",
+      "2.png": "N/A",
+      "6.png": "N/A",
+      "3.png": "N/A",
+      "8.png": "N/A",
+      "1.png": "N/A",
+      "4.png": "N/A",
+      "11.png": "N/A"
+    }
+  },
+  "scene_graph": {
+    "1": "entity - vase",
+    "2": "attribute - carving patterns",
+    "3": "attribute - aged texture",
+    "4": "action - (vase, has, carving patterns)"
+  },
+  "dependencies": {
+    "1": [
+      0
+    ],
+    "2": [
+      0
+    ],
+    "3": [
+      1
+    ],
+    "4": [
+      2
+    ]
+  },
+  "alignment_scores_per_question": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0,
+    "4": 0
+  },
+  "alignment_score": 0.0
+}

@@ -1,0 +1,111 @@
+{
+  "questions": {
+    "1": "Is there an ancient temple wall?",
+    "2": "Is there aged bricks?",
+    "3": "Are the bricks cracking?",
+    "4": "Is the ancient temple wall made of aged bricks?",
+    "5": "Are the bricks in the ancient temple wall cracking?"
+  },
+  "answers": {
+    "1": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "2": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "3": {
+      "10.png": "No",
+      "5.png": "No",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "No",
+      "2.png": "No",
+      "6.png": "No",
+      "3.png": "No",
+      "8.png": "Yes",
+      "1.png": "No",
+      "4.png": "No",
+      "11.png": "No"
+    },
+    "4": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "5": {
+      "10.png": "No",
+      "5.png": "No",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "No",
+      "2.png": "No",
+      "6.png": "No",
+      "3.png": "No",
+      "8.png": "Yes",
+      "1.png": "No",
+      "4.png": "No",
+      "11.png": "No"
+    }
+  },
+  "scene_graph": {
+    "1": "entity - ancient temple wall",
+    "2": "entity - aged bricks",
+    "3": "action - (crack, ancient temple wall, aged bricks)"
+  },
+  "dependencies": {
+    "1": [
+      0
+    ],
+    "2": [
+      0
+    ],
+    "3": [
+      1
+    ],
+    "4": [
+      0
+    ],
+    "5": [
+      1
+    ]
+  },
+  "alignment_scores_per_question": {
+    "1": 1.0,
+    "2": 1.0,
+    "3": 0.08333333333333333,
+    "4": 1.0,
+    "5": 0.08333333333333333
+  },
+  "alignment_score": 0.6333333333333334
+}

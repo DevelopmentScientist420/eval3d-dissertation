@@ -1,0 +1,74 @@
+{
+  "questions": {
+    "1": "Is there a wooden crate?",
+    "2": "Is there rotting wood texture?",
+    "3": "Is the wooden crate with rotting wood texture?"
+  },
+  "answers": {
+    "1": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "2": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "No",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "No"
+    },
+    "3": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "No",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "No"
+    }
+  },
+  "scene_graph": {
+    "1": "entity - wooden crate",
+    "2": "attribute - rotting wood texture",
+    "3": "action - (crates, have, rotting wood texture)"
+  },
+  "dependencies": {
+    "1": [
+      0
+    ],
+    "2": [
+      0
+    ],
+    "3": [
+      1,
+      2
+    ]
+  },
+  "alignment_scores_per_question": {
+    "1": 1.0,
+    "2": 0.5,
+    "3": 0.5
+  },
+  "alignment_score": 0.6666666666666666
+}

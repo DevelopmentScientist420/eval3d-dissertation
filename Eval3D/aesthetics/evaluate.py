@@ -23,14 +23,18 @@ def process_directory_imagereward(directory, n_div=60):
     return np.mean(pooled_scores)
 
 
-def get_aesthetic_scores(video_filename, cache_dir="sample_results", n_div=60):
-    frames = extract_frames(video_filename, cache_dir,n_div=60)
+def get_aesthetic_scores(video_filename, cache_dir="sample_results", n_div=60, prompt=None):
+    frames: list = extract_frames(video_filename, cache_dir, n_div=n_div)
+    actual_n_div: int = len(frames)
+    
+    if prompt is None:
+        prompt = os.path.splitext(os.path.basename(video_filename))[0]
     
     # compute scores
-    get_imagereward_for_dir(cache_dir, n_div=60)
+    get_imagereward_for_dir(cache_dir, prompt)
     
     # get scores
-    score = process_directory_imagereward(cache_dir, n_div=60)
+    score = process_directory_imagereward(cache_dir, n_div=actual_n_div)
     
     # clean up the cache folder
     for f in glob.glob(os.path.join(cache_dir, '*')):
@@ -41,6 +45,7 @@ def get_aesthetic_scores(video_filename, cache_dir="sample_results", n_div=60):
 if __name__ == "__main__":
     parser.add_argument('--video', type=str, required=True, help='Path to the video file')
     parser.add_argument('--cache_dir', type=str, default='sample_results', help='Directory to cache results')
+    parser.add_argument('--prompt', type=str, default=None, help='Text prompt associated with the video')
     args = parser.parse_args()
     
     video_filename = args.video
@@ -51,5 +56,5 @@ if __name__ == "__main__":
         sys.exit(1)
     
     # compute aesthetic scores
-    score = get_aesthetic_scores(video_filename, cache_dir, n_div)
+    score = get_aesthetic_scores(video_filename, cache_dir, n_div, prompt=args.prompt)
     print(f"Aesthetic score for {video_filename}: {score}")

@@ -1,0 +1,114 @@
+{
+  "questions": {
+    "1": "Is there an ancient torch?",
+    "2": "Is there a wall attachment?",
+    "3": "Is there a medieval design?",
+    "4": "Is the ancient torch attached to the wall?",
+    "5": "Is the ancient torch medieval in design?"
+  },
+  "answers": {
+    "1": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "2": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "3": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "4": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "5": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    }
+  },
+  "scene_graph": {
+    "1": "entity - ancient torch",
+    "2": "entity - wall",
+    "3": "attribute - medieval",
+    "4": "action - (torch, attach, wall)",
+    "5": "attribute - medieval"
+  },
+  "dependencies": {
+    "1": [
+      0
+    ],
+    "2": [
+      0
+    ],
+    "3": [
+      0
+    ],
+    "4": [
+      1,
+      2
+    ],
+    "5": [
+      3
+    ]
+  },
+  "alignment_scores_per_question": {
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0,
+    "5": 1.0
+  },
+  "alignment_score": 1.0
+}

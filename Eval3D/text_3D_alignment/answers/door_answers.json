@@ -1,0 +1,31 @@
+{
+    "prompt": "an ancient door with a frame",
+    "questions": {
+        "1": "Is there an ancient door?",
+        "2": "Is there a frame on the door?",
+        "3": "Is the door ancient?",
+        "4": "Is the frame on the door?"
+    },
+    "scene_graph": {
+        "1": "entity - door",
+        "2": "entity - frame",
+        "3": "attribute - ancient",
+        "4": "attribute - frame"
+    },
+    "question_dependencies": {
+        "1": [
+            0
+        ],
+        "2": [
+            0
+        ],
+        "3": [
+            1,
+            2
+        ],
+        "4": [
+            1,
+            2
+        ]
+    }
+}

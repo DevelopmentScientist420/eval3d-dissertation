@@ -1,0 +1,113 @@
+{
+  "questions": {
+    "1": "Is the vase ancient?",
+    "2": "Is the vase made of aged ceramic?",
+    "3": "Is the vase decorated with carving patterns?",
+    "4": "Is the vase made of handles?",
+    "5": "Is the vase ancient and made of aged ceramic?"
+  },
+  "answers": {
+    "1": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "2": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "3": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "4": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "5": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "Yes",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "Yes",
+      "8.png": "Yes",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    }
+  },
+  "scene_graph": {
+    "1": "entity - vase",
+    "2": "attribute - aged ceramic",
+    "3": "attribute - carving patterns",
+    "4": "attribute - handles",
+    "5": "attribute - ancient"
+  },
+  "dependencies": {
+    "1": [
+      0
+    ],
+    "2": [
+      0
+    ],
+    "3": [
+      1
+    ],
+    "4": [
+      2
+    ],
+    "5": [
+      3
+    ]
+  },
+  "alignment_scores_per_question": {
+    "1": 1.0,
+    "2": 1.0,
+    "3": 1.0,
+    "4": 1.0,
+    "5": 1.0
+  },
+  "alignment_score": 1.0
+}

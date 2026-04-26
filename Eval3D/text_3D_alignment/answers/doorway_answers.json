@@ -1,0 +1,136 @@
+{
+  "questions": {
+    "1": "Is there an ancient temple doorway?",
+    "2": "Is there a carved frame?",
+    "3": "Is the wall made of cracking aged bricks?",
+    "4": "Is the doorway ancient?",
+    "5": "Is the carved frame ancient?",
+    "6": "Is the wall made of cracking aged bricks?"
+  },
+  "answers": {
+    "1": {
+      "10.png": "Yes",
+      "5.png": "N/A",
+      "7.png": "N/A",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "N/A",
+      "8.png": "N/A",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "2": {
+      "10.png": "No",
+      "5.png": "N/A",
+      "7.png": "N/A",
+      "9.png": "No",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "N/A",
+      "8.png": "N/A",
+      "1.png": "No",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "3": {
+      "10.png": "Yes",
+      "5.png": "N/A",
+      "7.png": "N/A",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "N/A",
+      "8.png": "N/A",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "4": {
+      "10.png": "Yes",
+      "5.png": "N/A",
+      "7.png": "N/A",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "N/A",
+      "8.png": "N/A",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "5": {
+      "10.png": "Yes",
+      "5.png": "N/A",
+      "7.png": "N/A",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "N/A",
+      "8.png": "N/A",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "6": {
+      "10.png": "Yes",
+      "5.png": "N/A",
+      "7.png": "N/A",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "Yes",
+      "3.png": "N/A",
+      "8.png": "N/A",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    }
+  },
+  "scene_graph": {
+    "1": "entity - ancient temple doorway",
+    "2": "entity - carved frame",
+    "3": "entity - wall",
+    "4": "entity - doorway",
+    "5": "entity - carved frame",
+    "6": "entity - wall"
+  },
+  "dependencies": {
+    "1": [
+      0
+    ],
+    "2": [
+      0
+    ],
+    "3": [
+      0
+    ],
+    "4": [
+      1,
+      2
+    ],
+    "5": [
+      1,
+      2
+    ],
+    "6": [
+      1,
+      2
+    ]
+  },
+  "alignment_scores_per_question": {
+    "1": 0.3333333333333333,
+    "2": 0.0,
+    "3": 0.3333333333333333,
+    "4": 0,
+    "5": 0,
+    "6": 0
+  },
+  "alignment_score": 0.1111111111111111
+}

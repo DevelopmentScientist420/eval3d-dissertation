@@ -1,0 +1,93 @@
+{
+  "questions": {
+    "1": "Is there an ancient stone statue?",
+    "2": "Is there a woman in the statue?",
+    "3": "Is the statue wearing a robe?",
+    "4": "Is the statue ancient?"
+  },
+  "answers": {
+    "1": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "N/A",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "N/A",
+      "3.png": "Yes",
+      "8.png": "N/A",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "2": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "N/A",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "No",
+      "6.png": "N/A",
+      "3.png": "No",
+      "8.png": "N/A",
+      "1.png": "No",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "3": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "N/A",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "N/A",
+      "3.png": "No",
+      "8.png": "N/A",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    },
+    "4": {
+      "10.png": "Yes",
+      "5.png": "Yes",
+      "7.png": "N/A",
+      "9.png": "Yes",
+      "0.png": "Yes",
+      "2.png": "Yes",
+      "6.png": "N/A",
+      "3.png": "Yes",
+      "8.png": "N/A",
+      "1.png": "Yes",
+      "4.png": "Yes",
+      "11.png": "Yes"
+    }
+  },
+  "scene_graph": {
+    "1": "entity - ancient stone statue",
+    "2": "entity - woman",
+    "3": "attribute - (woman, wearing, robe)",
+    "4": "attribute - (statue, ancient)"
+  },
+  "dependencies": {
+    "1": [
+      0
+    ],
+    "2": [
+      0
+    ],
+    "3": [
+      1
+    ],
+    "4": [
+      0
+    ]
+  },
+  "alignment_scores_per_question": {
+    "1": 0.5833333333333334,
+    "2": 0.16666666666666666,
+    "3": 0.3333333333333333,
+    "4": 0.5833333333333334
+  },
+  "alignment_score": 0.41666666666666663
+}
